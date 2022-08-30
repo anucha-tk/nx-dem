@@ -14,7 +14,11 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-demo/server/util-interfaces": [
+        "libs/server/util-interfaces/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
