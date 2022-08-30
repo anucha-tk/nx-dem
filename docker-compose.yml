@@ -9,11 +9,11 @@ services:
     ports:
       - 27017:27017
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=$DB_ADMIN
-      - MONGO_INITDB_ROOT_PASSWORD=$DB_ADMIN_PWD
-      - MONGO_INITDB_DATABASE=$DB_NAME
-      - MONGO_INITDB_USERNAME=$DB_USER
-      - MONGO_INITDB_PASSWORD=$DB_USER_PWD
+      - MONGO_INITDB_ROOT_USERNAME=$NX_DB_ADMIN
+      - MONGO_INITDB_ROOT_PASSWORD=$NX_DB_ADMIN_PWD
+      - MONGO_INITDB_DATABASE=$NX_DB_NAME
+      - MONGO_INITDB_USERNAME=$NX_DB_USER
+      - MONGO_INITDB_PASSWORD=$NX_DB_USER_PWD
     volumes:
       - ./addons/init-mongo.sh:/docker-entrypoint-initdb.d/init-mongo.sh
       - dbdata:/data/db
