@@ -4,10 +4,11 @@ import NxWelcome from './nx-welcome';
 import { useEffect, useState } from 'react';
 import { Post } from '@nx-demo/server/util-interfaces';
 export function App() {
-  const [posts, setPosts] = useState<Post[]>([]);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [posts, setPosts] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch('/api')
+    fetch('/api/users')
       .then((res) => res.json())
       .then((res) => setPosts(res));
   }, []);
@@ -17,9 +18,10 @@ export function App() {
       {/* <NxWelcome title="client" /> */}
       <h1>Post Lists</h1>
       {posts.map((post) => (
-        <div key={post.title}>
-          <li>{post.title}</li>
-          <li>{post.body}</li>
+        <div key={post._id}>
+          <li>{post.firstName}</li>
+          <li>{post.lastName}</li>
+          <li>{post.email}</li>
         </div>
       ))}
       <div />
